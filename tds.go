@@ -213,7 +213,7 @@ func readPrelogin(r *tdsBuffer) (map[uint8][]byte, error) {
 		return nil, err
 	}
 	if packet_type != 4 {
-		return nil, errors.New("Invalid respones, expected packet type 4, PRELOGIN RESPONSE")
+		return nil, errors.New("Invalid response, expected packet type 4, PRELOGIN RESPONSE")
 	}
 	offset := 0
 	results := map[uint8][]byte{}
