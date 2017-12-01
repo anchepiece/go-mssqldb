@@ -120,7 +120,7 @@ func TestBulkcopy(t *testing.T) {
 
 		ptrs := make([]interface{}, len(columns))
 		container := make([]interface{}, len(columns))
-		for i, _ := range ptrs {
+		for i := range ptrs {
 			ptrs[i] = &container[i]
 		}
 		if err := rows.Scan(ptrs...); err != nil {
@@ -197,7 +197,7 @@ func setupTable(conn *sql.DB, tableName string) (err error) {
 	[test_decimal_9_2] [decimal](9, 2) NULL,
 	[test_decimal_20_0] [decimal](20, 0) NULL,
 	[test_numeric_30_10] [decimal](30, 10) NULL,
- CONSTRAINT [PK_` + tableName + `_id] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_` + tableName + `_id] PRIMARY KEY CLUSTERED
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

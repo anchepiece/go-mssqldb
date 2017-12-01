@@ -25,6 +25,7 @@ type MssqlBulk struct {
 	Options    MssqlBulkOptions
 	Debug      bool
 }
+
 type MssqlBulkOptions struct {
 	CheckConstraints  bool
 	FireTriggers      bool
